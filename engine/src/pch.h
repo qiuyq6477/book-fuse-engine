@@ -18,10 +18,14 @@
 #include <unordered_map>
 
 // SDL2 libraries
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL_image.h>
+#include <SDL.h>
+#include <SDL_ttf.h>
+#include <SDL_mixer.h>
+#include <SDL_image.h>
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 // export api
 #ifdef FUSE_EXPORT
