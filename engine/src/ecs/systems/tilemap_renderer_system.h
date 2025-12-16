@@ -31,7 +31,7 @@ namespace fuse::ecs {
 
   private:
     FUSE_INLINE void draw_tile(asset_id tileset_id, float x, float y, int row, int col, int size, SDL_RendererFlip flip) {
-      SDL_FRect dst_rect = { x * size, y * size, size, size};
+      SDL_FRect dst_rect = { x * static_cast<float>(size), y * static_cast<float>(size), static_cast<float>(size), static_cast<float>(size)};
       SDL_Rect src_rect = { row * size, col * size, size, size };
       auto& tileset = _assets->get<texture_asset>(tileset_id)->instance;
       SDL_RenderCopyExF(_renderer, tileset.data, &src_rect, &dst_rect, 0, NULL, flip);
